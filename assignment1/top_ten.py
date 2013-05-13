@@ -39,8 +39,9 @@ def process_file(tweet_file):
         json_tweet = json.loads(tweet)
         if json_tweet is not None:
             process_entities(json_tweet.get("entities"))
-            if json_tweet.get("retweeted_status") is not None:
-                process_entities(json_tweet.get("retweeted_status").get("entities"))
+            # to count hashtags from retweets
+            #if json_tweet.get("retweeted_status") is not None:
+                #process_entities(json_tweet.get("retweeted_status").get("entities"))
     #display_output()
     display_top_ten()
 
